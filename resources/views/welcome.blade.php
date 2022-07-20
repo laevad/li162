@@ -12,6 +12,9 @@
                                     #
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                                    Owner
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-white px-6 py-4">
                                     Name
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-white px-6 py-4">
@@ -27,6 +30,7 @@
                             @foreach($products as $product)
                                 <tr class="bg-white border-b">
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $loop->iteration }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $product->user->name }}</td>
                                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                         {{ $product->name }}
                                     </td>
