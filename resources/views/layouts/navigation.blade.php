@@ -6,13 +6,14 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="/">
-                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
+                        <img src="{{ asset('images/logo.png') }}" alt="" width="80">
                     </a>
                 </div>
 
                @auth()
                     <!-- Navigation Links -->
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+
                         <x-nav-link :href="route('products')" :active="request()->routeIs('products')">
                             {{ __('Dashboard') }}
                         </x-nav-link>
@@ -20,6 +21,13 @@
 {{--                            {{ __('Products') }}--}}
 {{--                        </x-nav-link>--}}
                     </div>
+                @else
+                    <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
+                        {{ __('Home') }}
+                    </x-nav-link>
+                    <x-nav-link  :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('Products') }}
+                    </x-nav-link>
                 @endauth
             </div>
 
@@ -55,7 +63,7 @@
                 </div>
             @else
                 <!-- Settings Dropdown -->
-                <div class="hidden space-x-6 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden  sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('login')" >
                         {{ __('Login') }}
                     </x-nav-link>

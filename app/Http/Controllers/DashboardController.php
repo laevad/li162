@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-class Welcome extends Controller
+class DashboardController extends Controller
 {
     public function index(){
         $products = Product::latest()->paginate(7);

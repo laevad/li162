@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Welcome;
+use App\Http\Controllers\DashboardController;
 use App\Http\Livewire\Products;
 use Illuminate\Support\Facades\Route;
 
@@ -15,12 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [Welcome::class, 'index']);
-
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
-   Route::view('/dashboard','dashboard')->name('dashboard');
-
    Route::get('products', Products::class)->name('products');
 });
 

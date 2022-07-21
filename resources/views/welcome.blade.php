@@ -1,5 +1,15 @@
 <x-app-layout>
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="opacity-75" style="background-image: url('images/bg.png'); padding: 1%">
+        <div class="flex items-center justify-center h-screen">
+            <img src="{{ url('images/logo.png') }}" class="" alt="">
+        </div>
+
+    </div>
+    <div class="flex items-center justify-center h-screen p-6 mt-1 shadow-lg">
+        <span class="text-gray-600" style="font-weight: bolder; font-size: 25px; font-family: Tahoma,serif">The Employees' Pre-Owned Items System</span>
+    </div>
+
+    <div class="max-w-10x1 mx-auto sm:px-6 lg:px-8">
 
         <div class="flex flex-col">
             <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -54,5 +64,4 @@
             </div>
         </div>
     </div>
-
 </x-app-layout>
